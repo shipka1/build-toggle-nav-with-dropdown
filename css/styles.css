@@ -6,6 +6,7 @@ body {
 
 .container {
     padding: 1rem;
+    position: relative;
 }
 
 h1 a {
@@ -41,10 +42,106 @@ header .flex-container {
     justify-content: space-between;
 }
 
+header a svg {
+    width: 15px;
+    height: 15px;
+}
+
+.main-menu li {
+    line-height: 85px;
+    margin: 0 25px;
+    border-bottom: 1px solid #e3eaf3;
+    white-space: nowrap;
+}
+
+.main-menu li:last-of-type {
+    border-bottom: none;
+}
+
+.main-menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f89d70;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.main-menu a:hover,
+.main-menu a:active {
+    background-color: #e3eaf3;
+    border-radius: 5px;
+}
+
+.dropdown-menu a {
+    color: #00263e;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.main-menu svg:last-of-type {
+    margin-left: auto;
+}
+
+.main-menu svg:first-of-type {
+    margin-right: 10px;
+}
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.main-menu li:hover > .dropdown-menu {
+    max-height: initial
+}
+
+nav {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    transition: all 0.4s ease;
+}
+
+.show-nav {
+    max-height: 100vh;
+}
+
 @media only screen and (min-width: 1300px) {
     .container {
         padding: 1rem 0;
         max-width: 75rem;
         margin: 0 auto;
+        display: flex;
     }
+
+    .main-menu {
+        display: flex;
+    }
+
+    .menu-icons {
+        display: none;
+    }
+
+    nav {
+        max-height: min-content;
+        overflow: visible;
+        position: relative;
+        margin-left: 27.5em;
+    }
+
+    .main-menu li {
+        line-height: 50px;
+        margin: 0 25px;
+        border-bottom: none;
+    }
+
 }
+
+/*finish off the wide screen version of the menu 
+copy and paste header to every page
+validate markup + css
+upload and submit */
